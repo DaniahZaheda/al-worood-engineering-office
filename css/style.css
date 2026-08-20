@@ -8,9 +8,9 @@
 
 :root {
 
-    --navy-dark: #071827;
-    --navy: #0d2438;
-    --navy-light: #16364f;
+    --navy-dark: #2c4d6b;
+    --navy: ##2c4d6b;
+    --navy-light: ##2c4d6b;
 
     --gold: #c7a15a;
     --gold-light: #d9bb7a;
@@ -116,15 +116,13 @@ ul {
 
 /* ==================== Logo ==================== */
 
-.logo {
+.logo-image {
+    width: 120px;
+    height: 75px;
 
-    display: flex;
+    object-fit: contain;
 
-    align-items: center;
-
-    gap: 12px;
-
-    min-width: max-content;
+    display: block;
 }
 
 .logo-mark {
@@ -296,12 +294,13 @@ ul {
 
     inset: 0;
 
+   
     background-image:
-        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=85");
+        url("../assets/images/hero.jpeg");
 
     background-size: cover;
 
-    background-position: center;
+    background-position: center top;
 
     z-index: -2;
 
