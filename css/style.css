@@ -1,0 +1,1111 @@
+/* =====================================================
+   Al-Worood Engineering Office
+   Main Stylesheet
+===================================================== */
+
+
+/* ==================== Variables ==================== */
+
+:root {
+
+    --navy-dark: #071827;
+    --navy: #0d2438;
+    --navy-light: #16364f;
+
+    --gold: #c7a15a;
+    --gold-light: #d9bb7a;
+
+    --white: #ffffff;
+    --off-white: #f7f5f0;
+
+    --text-light: #e8edf1;
+    --text-muted: #aeb8c1;
+
+    --border: rgba(255, 255, 255, 0.15);
+
+    --transition: 0.35s ease;
+
+    --container-width: 1200px;
+}
+
+
+/* ==================== Reset ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    background: var(--navy-dark);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* ==================== Container ==================== */
+
+.container {
+    width: min(90%, var(--container-width));
+    margin: 0 auto;
+}
+
+
+/* ==================== Header ==================== */
+
+.header {
+
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    padding: 22px 0;
+
+    transition: var(--transition);
+}
+
+.header.scrolled {
+
+    background: rgba(7, 24, 39, 0.96);
+
+    backdrop-filter: blur(12px);
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid rgba(199, 161, 90, 0.15);
+}
+
+
+/* ==================== Navbar ==================== */
+
+.navbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* ==================== Logo ==================== */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: max-content;
+}
+
+.logo-mark {
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    font-size: 24px;
+
+    font-weight: 600;
+}
+
+.logo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+.logo-text small {
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==================== Navigation ==================== */
+
+.nav-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.nav-link {
+
+    position: relative;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    transition: var(--transition);
+}
+
+.nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -8px;
+    right: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+
+    color: var(--gold-light);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+
+    width: 100%;
+}
+
+
+/* ==================== Navbar Contact ==================== */
+
+.nav-contact {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 18px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold-light);
+
+    font-size: 13px;
+
+    transition: var(--transition);
+}
+
+.nav-contact:hover {
+
+    background: var(--gold);
+
+    color: var(--navy-dark);
+}
+
+
+/* ==================== Mobile Menu ==================== */
+
+.menu-toggle {
+
+    display: none;
+
+    background: transparent;
+
+    border: none;
+
+    color: var(--white);
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* ==================== Hero ==================== */
+
+.hero {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* ==================== Hero Background ==================== */
+
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    z-index: -2;
+
+    transform: scale(1.02);
+
+    animation: heroZoom 12s ease-in-out infinite alternate;
+}
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 24, 39, 0.96) 0%,
+            rgba(7, 24, 39, 0.78) 40%,
+            rgba(7, 24, 39, 0.45) 100%
+        );
+}
+
+
+/* ==================== Hero Content ==================== */
+
+.hero-content {
+
+    position: relative;
+
+    padding-top: 100px;
+
+    padding-bottom: 60px;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* ==================== Hero Text ==================== */
+
+.hero-text {
+
+    max-width: 680px;
+
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--gold-light);
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.hero-label span {
+
+    width: 35px;
+
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.hero h1 {
+
+    font-size: clamp(42px, 6vw, 78px);
+
+    font-weight: 500;
+
+    line-height: 1.15;
+
+    margin-bottom: 28px;
+
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+.hero p {
+
+    max-width: 580px;
+
+    color: var(--text-light);
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    font-weight: 300;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==================== Hero Buttons ==================== */
+
+.hero-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    min-width: 175px;
+
+    padding: 14px 24px;
+
+    font-size: 14px;
+
+    transition: var(--transition);
+}
+
+.btn-primary {
+
+    background: var(--gold);
+
+    color: var(--navy-dark);
+}
+
+.btn-primary:hover {
+
+    background: var(--gold-light);
+
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    color: var(--white);
+}
+
+.btn-outline:hover {
+
+    border-color: var(--gold);
+
+    color: var(--gold);
+
+    transform: translateY(-3px);
+}
+
+
+/* ==================== Hero Info ==================== */
+
+.hero-info {
+
+    position: absolute;
+
+    bottom: 45px;
+    right: 0;
+
+    display: flex;
+
+    gap: 40px;
+}
+
+.hero-info-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.hero-info-item strong {
+
+    color: var(--gold);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+
+    font-weight: 500;
+}
+
+.hero-info-item span {
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+/* ==================== Scroll Down ==================== */
+
+.scroll-down {
+
+    position: absolute;
+
+    bottom: 35px;
+    left: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    writing-mode: vertical-rl;
+
+    transition: var(--transition);
+}
+
+.scroll-down i {
+
+    color: var(--gold);
+
+    animation: scrollArrow 1.5s infinite;
+}
+
+.scroll-down:hover {
+
+    color: var(--gold);
+}
+
+
+/* ==================== Animations ==================== */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroZoom {
+
+    from {
+        transform: scale(1.02);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes scrollArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 1000px) {
+
+    .nav-menu {
+        gap: 18px;
+    }
+
+    .nav-contact {
+        display: none;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+
+        position: absolute;
+
+        top: 100%;
+
+        right: 5%;
+
+        width: 90%;
+
+        padding: 25px;
+
+        background: rgba(7, 24, 39, 0.98);
+
+        border: 1px solid rgba(199, 161, 90, 0.2);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition: var(--transition);
+    }
+
+    .nav-menu.active {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+    .hero h1 {
+
+        font-size: clamp(38px, 10vw, 60px);
+
+        letter-spacing: -1px;
+    }
+
+    .hero-info {
+        display: none;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .header {
+        padding: 16px 0;
+    }
+
+    .logo-mark {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .logo-text {
+        font-size: 15px;
+    }
+
+    .hero-content {
+        padding-top: 100px;
+    }
+
+    .hero p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   About Section
+===================================================== */
+
+.about-section {
+
+    background: var(--off-white);
+
+    color: var(--navy-dark);
+
+    padding: 120px 0;
+}
+
+
+/* ==================== Section Heading ==================== */
+
+.section-heading {
+
+    max-width: 650px;
+
+    margin-bottom: 70px;
+}
+
+.section-label {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--gold);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 18px;
+}
+
+.section-label::before {
+
+    content: "";
+
+    width: 35px;
+
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.section-heading h2 {
+
+    font-size: clamp(36px, 5vw, 58px);
+
+    line-height: 1.3;
+
+    font-weight: 500;
+
+    color: var(--navy-dark);
+}
+
+.section-heading h2 span {
+
+    color: var(--gold);
+
+    font-weight: 600;
+}
+
+
+/* ==================== About Content ==================== */
+
+.about-content {
+
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+
+    gap: 90px;
+}
+
+
+/* ==================== About Image ==================== */
+
+.about-image {
+
+    position: relative;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+}
+
+.about-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    pointer-events: none;
+}
+
+.about-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.8s ease;
+}
+
+.about-image:hover img {
+
+    transform: scale(1.05);
+}
+
+
+/* ==================== Image Badge ==================== */
+
+.about-image-badge {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    right: 35px;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 20px;
+
+    background: var(--navy-dark);
+
+    color: var(--white);
+}
+
+.about-image-badge strong {
+
+    color: var(--gold);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+}
+
+.about-image-badge span {
+
+    font-size: 12px;
+
+    color: var(--text-light);
+}
+
+
+/* ==================== About Text ==================== */
+
+.about-text {
+
+    max-width: 620px;
+}
+
+.about-subtitle {
+
+    color: var(--gold);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.about-text h3 {
+
+    color: var(--navy-dark);
+
+    font-size: clamp(34px, 4vw, 52px);
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    margin: 18px 0 25px;
+}
+
+.about-text h3 span {
+
+    color: var(--gold);
+
+    font-weight: 600;
+}
+
+.about-text > p {
+
+    color: #5e6972;
+
+    font-size: 15px;
+
+    line-height: 2;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================== Values ==================== */
+
+.about-values {
+
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid #ddd8cf;
+
+    border-bottom: 1px solid #ddd8cf;
+}
+
+.value-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 25px 18px;
+
+    border-left: 1px solid #ddd8cf;
+}
+
+.value-item:first-child {
+
+    padding-right: 0;
+}
+
+.value-item:last-child {
+
+    border-left: none;
+}
+
+.value-number {
+
+    color: var(--gold);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+}
+
+.value-item strong {
+
+    color: var(--navy-dark);
+
+    font-size: 15px;
+}
+
+.value-item p {
+
+    color: #7a8389;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* ==================== Text Link ==================== */
+
+.text-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+    color: var(--navy-dark);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.text-link i {
+
+    color: var(--gold);
+
+    transition: var(--transition);
+}
+
+.text-link:hover {
+
+    color: var(--gold);
+}
+
+.text-link:hover i {
+
+    transform: translateX(-5px);
+}
+
+@media (max-width: 900px) {
+
+    .about-section {
+
+        padding: 90px 0;
+    }
+
+    .about-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .about-image {
+
+        height: 500px;
+    }
+
+    .about-text {
+
+        max-width: 100%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .about-section {
+
+        padding: 75px 0;
+    }
+
+    .section-heading {
+
+        margin-bottom: 45px;
+    }
+
+    .about-image {
+
+      aspect-ratio: 4 / 5;
+    }
+
+    .about-image-badge {
+
+        bottom: 25px;
+
+        right: 25px;
+    }
+
+    .about-values {
+
+        grid-template-columns: 1fr;
+
+        border-bottom: none;
+    }
+
+    .value-item {
+
+        border-left: none;
+
+        border-bottom: 1px solid #ddd8cf;
+
+        padding: 20px 0;
+    }
+
+    .value-item:first-child {
+
+        padding-right: 0;
+    }
+
+    .value-item:last-child {
+
+        border-bottom: none;
+    }
+
+}
