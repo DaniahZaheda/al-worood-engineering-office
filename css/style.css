@@ -265,6 +265,23 @@ img {
     color: var(--navy-dark);
 }
 
+/* ==================== Project Start Button ==================== */
+
+.project-start-btn {
+    background: var(--gold);
+    color: var(--navy-dark);
+    border-color: var(--gold);
+}
+
+.project-start-btn:hover {
+    background: var(--white);
+    color: var(--navy-dark);
+    border-color: var(--white);
+}
+
+.project-start-btn i {
+    color: inherit;
+}
 
 /* ==================== Mobile Menu ==================== */
 
@@ -388,7 +405,7 @@ img {
 
     color: var(--gold-light);
 
-    font-size: 14px;
+    font-size: 30px;
 
     margin-bottom: 25px;
 }
@@ -641,7 +658,7 @@ img {
 
     color: var(--navy-dark);
 
-    padding: 120px 0;
+    padding: 50px 0;
 }
 
 
@@ -666,7 +683,7 @@ img {
 
     color: var(--gold);
 
-    font-size: 13px;
+    font-size: 35px;
 
     font-weight: 600;
 
@@ -686,7 +703,7 @@ img {
 
 .section-heading h2 {
 
-    font-size: clamp(36px, 5vw, 58px);
+    font-size: clamp(30px, 5vw, 50px);
 
     line-height: 1.3;
 
@@ -963,7 +980,7 @@ img {
 
     color: var(--navy-dark);
 
-    padding: 120px 0;
+    padding: 50px 0;
 }
 
 
@@ -1204,11 +1221,11 @@ img {
 
 .projects-section {
 
-    background: var(--white);
+    background: var(--off-white);
 
     color: var(--navy-dark);
 
-    padding: 120px 0;
+    padding: 50px 0;
 }
 
 
@@ -1401,7 +1418,7 @@ img {
 
     background: var(--off-white);
 
-    padding: 120px 0;
+    padding: 50px 0;
 
     color: var(--navy-dark);
 }
@@ -2142,11 +2159,7 @@ img {
         gap: 18px;
     }
 
-    .nav-contact {
-
-        display: none;
-    }
-
+   
     .services-grid {
 
         grid-template-columns: repeat(2, 1fr);
@@ -2671,4 +2684,1044 @@ img {
 .developer-link:hover {
     color: var(--gold);
     border-bottom-color: var(--gold);
+}
+
+/* =====================================================
+   Project Assistant
+===================================================== */
+
+.project-start-btn {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* ==================== Modal ==================== */
+
+.assistant-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.assistant-modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ==================== Overlay ==================== */
+
+.assistant-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(7, 15, 25, 0.82);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* ==================== Box ==================== */
+
+.assistant-box {
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 760px);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: var(--off-white);
+    color: var(--navy-dark);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(30px) scale(0.97);
+
+    transition: transform 0.4s ease;
+}
+
+.assistant-modal.active .assistant-box {
+    transform: translateY(0) scale(1);
+}
+
+
+/* ==================== Header ==================== */
+
+.assistant-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 35px 40px 25px;
+
+    border-bottom: 1px solid #ddd8cf;
+}
+
+.assistant-label {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.assistant-header h2 {
+    color: var(--navy-dark);
+
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.assistant-header h2 span {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+
+/* ==================== Close ==================== */
+
+.assistant-close {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ddd8cf;
+
+    background: transparent;
+
+    color: var(--navy-dark);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.assistant-close:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+
+    color: var(--white);
+}
+
+
+/* ==================== Progress ==================== */
+
+.assistant-progress {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 20px 40px;
+}
+
+.progress-bar {
+    flex: 1;
+
+    height: 3px;
+
+    background: #ddd8cf;
+
+    overflow: hidden;
+}
+
+.progress-bar span {
+    display: block;
+
+    width: 25%;
+    height: 100%;
+
+    background: var(--gold);
+
+    transition: width 0.4s ease;
+}
+
+#assistantStepText {
+    color: #8a9298;
+    font-size: 11px;
+}
+
+
+/* ==================== Content ==================== */
+
+.assistant-content {
+    padding: 25px 40px 40px;
+}
+
+
+/* ==================== Steps ==================== */
+
+.assistant-step {
+    display: none;
+
+    animation: assistantFade 0.4s ease;
+}
+
+.assistant-step.active {
+    display: block;
+}
+
+@keyframes assistantFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==================== Step Heading ==================== */
+
+.step-number {
+    display: block;
+
+    color: var(--gold);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.assistant-step h3 {
+    color: var(--navy-dark);
+
+    font-size: 27px;
+    font-weight: 500;
+
+    margin-bottom: 10px;
+}
+
+.assistant-step > p {
+    color: #68727a;
+
+    font-size: 13px;
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==================== Options ==================== */
+
+.assistant-options {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.assistant-option {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 75px;
+
+    padding: 15px 18px;
+
+    border: 1px solid #ddd8cf;
+
+    background: transparent;
+
+    color: var(--navy-dark);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    text-align: right;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.assistant-option i {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    transition: var(--transition);
+}
+
+.assistant-option:hover {
+    border-color: var(--gold);
+
+    transform: translateY(-2px);
+}
+
+.assistant-option:hover i {
+    background: var(--gold);
+
+    color: var(--white);
+}
+
+
+/* ==================== Fields ==================== */
+
+.assistant-fields {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.assistant-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.assistant-field label {
+    color: var(--navy-dark);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+
+    top: 50%;
+    right: 16px;
+
+    transform: translateY(-50%);
+
+    color: var(--gold);
+}
+
+.assistant-field input,
+.assistant-field textarea {
+    width: 100%;
+
+    border: 1px solid #ddd8cf;
+
+    background: var(--white);
+
+    color: var(--navy-dark);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+.assistant-field input {
+    height: 50px;
+
+    padding: 0 45px 0 15px;
+}
+
+.assistant-field textarea {
+    resize: vertical;
+
+    min-height: 110px;
+
+    padding: 15px;
+}
+
+.assistant-field input:focus,
+.assistant-field textarea:focus {
+    border-color: var(--gold);
+
+    box-shadow: 0 0 0 3px rgba(199, 161, 90, 0.08);
+}
+
+
+/* ==================== Next Button ==================== */
+
+.assistant-next {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border: none;
+
+    background: var(--navy-dark);
+
+    color: var(--white);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.assistant-next:hover {
+    background: var(--gold);
+
+    color: var(--navy-dark);
+}
+
+.assistant-next i {
+    transition: var(--transition);
+}
+
+.assistant-next:hover i {
+    transform: translateX(-5px);
+}
+
+
+/* ==================== Result ==================== */
+
+.assistant-step[data-step="4"] {
+    text-align: center;
+}
+
+.assistant-result-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 25px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    font-size: 25px;
+}
+
+.assistant-step[data-step="4"] .step-number {
+    margin-bottom: 10px;
+}
+
+.assistant-step[data-step="4"] h3 {
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.recommendation-text {
+    max-width: 570px;
+
+    margin: 0 auto 25px;
+
+    color: #68727a;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+.recommendation-box {
+    max-width: 500px;
+
+    margin: 0 auto 20px;
+
+    padding: 20px;
+
+    border-right: 2px solid var(--gold);
+
+    background: rgba(199, 161, 90, 0.07);
+
+    text-align: right;
+}
+
+.recommendation-box span {
+    display: block;
+
+    color: #8a9298;
+
+    font-size: 11px;
+
+    margin-bottom: 7px;
+}
+
+.recommendation-box strong {
+    color: var(--navy-dark);
+
+    font-size: 14px;
+}
+
+.assistant-note {
+    max-width: 520px;
+
+    margin: 0 auto 25px;
+
+    color: #8a9298 !important;
+
+    font-size: 11px !important;
+
+    line-height: 1.8 !important;
+}
+
+
+/* ==================== Result Actions ==================== */
+
+.assistant-result-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.assistant-contact-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 13px 22px;
+
+    background: var(--gold);
+
+    color: var(--navy-dark);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.assistant-contact-btn:hover {
+    background: var(--navy-dark);
+
+    color: var(--white);
+}
+
+.assistant-restart {
+    padding: 13px 22px;
+
+    border: 1px solid #ddd8cf;
+
+    background: transparent;
+
+    color: var(--navy-dark);
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.assistant-restart:hover {
+    border-color: var(--gold);
+
+    color: var(--gold);
+}
+
+
+/* =====================================================
+   Assistant Responsive
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .assistant-modal {
+        padding: 12px;
+    }
+
+    .assistant-box {
+        max-height: 94vh;
+    }
+
+    .assistant-header {
+        padding: 25px 20px 20px;
+    }
+
+    .assistant-header h2 {
+        font-size: 22px;
+    }
+
+    .assistant-progress {
+        padding: 15px 20px;
+    }
+
+    .assistant-content {
+        padding: 20px;
+    }
+
+    .assistant-options {
+        grid-template-columns: 1fr;
+    }
+
+    .assistant-option {
+        min-height: 65px;
+    }
+
+    .assistant-step h3 {
+        font-size: 23px;
+    }
+
+    .assistant-result-actions {
+        flex-direction: column;
+    }
+
+    .assistant-contact-btn,
+    .assistant-restart {
+        width: 100%;
+    }
+
+}
+
+
+
+/* ==================== Project Hover ==================== */
+
+.project-card:hover .project-image img {
+    transform: scale(1.06);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==================== Project Text ==================== */
+
+.project-overlay h3 {
+    font-size: 26px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.project-overlay h3 span {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.project-description {
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 8px 0 12px;
+    max-width: 650px;
+}
+
+.project-name-en {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    opacity: 0.75;
+    direction: ltr;
+    display: inline-block;
+}
+
+
+/* =====================================================
+   Project Modal
+===================================================== */
+
+.project-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease,
+                visibility 0.35s ease;
+}
+
+
+.project-modal.active {
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+/* ==================== Overlay ==================== */
+
+.project-modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(10, 15, 25, 0.82);
+
+    backdrop-filter: blur(7px);
+}
+
+
+/* ==================== Modal Box ==================== */
+
+.project-modal-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1000px, 100%);
+
+    max-height: 90vh;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #ffffff;
+
+    color: var(--navy-dark);
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(30px) scale(0.97);
+
+    transition: transform 0.35s ease;
+}
+
+
+.project-modal.active .project-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+
+/* ==================== Close Button ==================== */
+
+.project-modal-close {
+    position: absolute;
+
+    top: 18px;
+
+    left: 18px;
+
+    z-index: 5;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(28, 36, 55, 0.9);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: var(--transition);
+}
+
+
+.project-modal-close:hover {
+    transform: rotate(90deg);
+
+    background: var(--navy-dark);
+}
+
+
+/* ==================== Modal Image ==================== */
+
+.project-modal-image {
+    min-height: 560px;
+
+    background: #e9e9e9;
+}
+
+
+.project-modal-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ==================== Modal Information ==================== */
+
+.project-modal-info {
+    padding: 55px 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    overflow-y: auto;
+}
+
+
+.project-modal-category {
+    color: #9b8060;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+
+.project-modal-info h2 {
+    color: var(--navy-dark);
+
+    font-size: 32px;
+
+    line-height: 1.5;
+
+    margin: 0 0 8px;
+}
+
+
+.project-modal-en {
+    direction: ltr;
+
+    text-align: right;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 15px;
+
+    color: #777;
+
+    display: block;
+}
+
+
+.project-modal-divider {
+    width: 55px;
+
+    height: 2px;
+
+    background: #9b8060;
+
+    margin: 25px 0;
+}
+
+
+.project-modal-description-title {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: var(--navy-dark);
+
+    margin-bottom: 12px;
+}
+
+
+.project-modal-info p {
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    margin: 0;
+}
+
+
+/* ==================== Contact Button ==================== */
+
+.project-modal-contact {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    width: fit-content;
+
+    margin-top: 30px;
+
+    padding: 13px 22px;
+
+    background: var(--navy-dark);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: var(--transition);
+}
+
+
+.project-modal-contact:hover {
+    transform: translateX(-5px);
+
+    background: #29344d;
+}
+
+
+/* =====================================================
+   Project Card Button
+===================================================== */
+
+.project-details-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    margin-top: 12px;
+
+    padding: 11px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    font-family: "Cairo", sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(5px);
+
+    transition: var(--transition);
+}
+
+
+.project-details-btn:hover {
+    background: #ffffff;
+
+    color: var(--navy-dark);
+
+    transform: translateX(-5px);
+}
+
+
+/* =====================================================
+   Mobile
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .project-modal {
+        padding: 15px;
+    }
+
+
+    .project-modal-content {
+        display: block;
+
+        max-height: 92vh;
+
+        overflow-y: auto;
+    }
+
+
+    .project-modal-image {
+        height: 280px;
+
+        min-height: auto;
+    }
+
+
+    .project-modal-info {
+        padding: 35px 25px;
+    }
+
+
+    .project-modal-info h2 {
+        font-size: 25px;
+    }
+
+
+    .project-modal-info p {
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+
+    .project-modal-close {
+        top: 12px;
+
+        left: 12px;
+    }
+
 }
