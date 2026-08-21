@@ -8,9 +8,9 @@
 
 :root {
 
-    --navy-dark: #2c4d6b;
-    --navy: ##2c4d6b;
-    --navy-light: ##2c4d6b;
+    --navy-dark: rgb(28, 36, 55);
+    --navy: rgb(28, 36, 55);
+    --navy-light: rgb(28, 36, 55);
 
     --gold: #c7a15a;
     --gold-light: #d9bb7a;
@@ -21,7 +21,7 @@
     --text-light: #e8edf1;
     --text-muted: #aeb8c1;
 
-    --border: rgba(255, 255, 255, 0.15);
+    --border: rgba(28, 36, 55, 0.15);
 
     --transition: 0.35s ease;
 
@@ -39,6 +39,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
@@ -61,6 +62,10 @@ ul {
     list-style: none;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 /* ==================== Container ==================== */
 
@@ -70,7 +75,9 @@ ul {
 }
 
 
-/* ==================== Header ==================== */
+/* =====================================================
+   Header
+===================================================== */
 
 .header {
 
@@ -90,19 +97,23 @@ ul {
 
 .header.scrolled {
 
-    background: rgba(7, 24, 39, 0.96);
+    background: rgba(28, 36, 55, 0.96);
 
     backdrop-filter: blur(12px);
 
+    -webkit-backdrop-filter: blur(12px);
+
     padding: 14px 0;
 
-    border-bottom: 1px solid rgba(199, 161, 90, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 
 /* ==================== Navbar ==================== */
 
 .navbar {
+
+    position: relative;
 
     display: flex;
 
@@ -117,6 +128,7 @@ ul {
 /* ==================== Logo ==================== */
 
 .logo-image {
+
     width: 120px;
     height: 75px;
 
@@ -169,7 +181,9 @@ ul {
 }
 
 
-/* ==================== Navigation ==================== */
+/* =====================================================
+   Navigation
+===================================================== */
 
 .nav-menu {
 
@@ -251,6 +265,23 @@ ul {
     color: var(--navy-dark);
 }
 
+/* ==================== Project Start Button ==================== */
+
+.project-start-btn {
+    background: var(--gold);
+    color: var(--navy-dark);
+    border-color: var(--gold);
+}
+
+.project-start-btn:hover {
+    background: var(--white);
+    color: var(--navy-dark);
+    border-color: var(--white);
+}
+
+.project-start-btn i {
+    color: inherit;
+}
 
 /* ==================== Mobile Menu ==================== */
 
@@ -267,10 +298,21 @@ ul {
     font-size: 22px;
 
     cursor: pointer;
+
+    padding: 8px;
+
+    transition: var(--transition);
+}
+
+.menu-toggle:hover {
+
+    color: var(--gold);
 }
 
 
-/* ==================== Hero ==================== */
+/* =====================================================
+   Hero
+===================================================== */
 
 .hero {
 
@@ -294,7 +336,6 @@ ul {
 
     inset: 0;
 
-   
     background-image:
         url("../assets/images/hero.jpeg");
 
@@ -304,9 +345,7 @@ ul {
 
     z-index: -2;
 
-    transform: scale(1.02);
-
-    animation: heroZoom 12s ease-in-out infinite alternate;
+    animation: heroZoom 18s ease-in-out infinite alternate;
 }
 
 .hero-overlay {
@@ -318,10 +357,12 @@ ul {
     background:
         linear-gradient(
             90deg,
-            rgba(7, 24, 39, 0.96) 0%,
-            rgba(7, 24, 39, 0.78) 40%,
-            rgba(7, 24, 39, 0.45) 100%
+            rgba(28, 36, 55, 0.96) 0%,
+            rgba(28, 36, 55, 0.78) 40%,
+            rgba(28, 36, 55, 0.45) 100%
         );
+
+    z-index: -1;
 }
 
 
@@ -364,7 +405,7 @@ ul {
 
     color: var(--gold-light);
 
-    font-size: 14px;
+    font-size: 30px;
 
     margin-bottom: 25px;
 }
@@ -556,158 +597,56 @@ ul {
 }
 
 
-/* ==================== Animations ==================== */
+/* =====================================================
+   Animations
+===================================================== */
 
 @keyframes fadeUp {
 
     from {
+
         opacity: 0;
+
         transform: translateY(30px);
     }
 
     to {
+
         opacity: 1;
+
         transform: translateY(0);
     }
 }
 
+
 @keyframes heroZoom {
 
     from {
-        transform: scale(1.02);
+
+        transform: scale(1);
     }
 
     to {
-        transform: scale(1.08);
+
+        transform: scale(1.04);
     }
 }
+
 
 @keyframes scrollArrow {
 
     0%,
     100% {
+
         transform: translateY(0);
     }
 
     50% {
+
         transform: translateY(7px);
     }
 }
 
-
-/* ==================== Responsive ==================== */
-
-@media (max-width: 1000px) {
-
-    .nav-menu {
-        gap: 18px;
-    }
-
-    .nav-contact {
-        display: none;
-    }
-}
-
-
-@media (max-width: 800px) {
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-menu {
-
-        position: absolute;
-
-        top: 100%;
-
-        right: 5%;
-
-        width: 90%;
-
-        padding: 25px;
-
-        background: rgba(7, 24, 39, 0.98);
-
-        border: 1px solid rgba(199, 161, 90, 0.2);
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 20px;
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        transform: translateY(-10px);
-
-        transition: var(--transition);
-    }
-
-    .nav-menu.active {
-
-        opacity: 1;
-
-        visibility: visible;
-
-        transform: translateY(0);
-    }
-
-    .hero h1 {
-
-        font-size: clamp(38px, 10vw, 60px);
-
-        letter-spacing: -1px;
-    }
-
-    .hero-info {
-        display: none;
-    }
-
-    .scroll-down {
-        display: none;
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    .header {
-        padding: 16px 0;
-    }
-
-    .logo-mark {
-        width: 38px;
-        height: 38px;
-        font-size: 20px;
-    }
-
-    .logo-text {
-        font-size: 15px;
-    }
-
-    .hero-content {
-        padding-top: 100px;
-    }
-
-    .hero p {
-        font-size: 14px;
-        line-height: 1.9;
-    }
-
-    .hero-buttons {
-
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .btn {
-        width: 100%;
-    }
-}
 
 /* =====================================================
    About Section
@@ -719,7 +658,7 @@ ul {
 
     color: var(--navy-dark);
 
-    padding: 120px 0;
+    padding: 50px 0;
 }
 
 
@@ -744,7 +683,7 @@ ul {
 
     color: var(--gold);
 
-    font-size: 13px;
+    font-size: 35px;
 
     font-weight: 600;
 
@@ -764,7 +703,7 @@ ul {
 
 .section-heading h2 {
 
-    font-size: clamp(36px, 5vw, 58px);
+    font-size: clamp(30px, 5vw, 50px);
 
     line-height: 1.3;
 
@@ -1030,6 +969,1216 @@ ul {
     transform: translateX(-5px);
 }
 
+
+/* =====================================================
+   Services Section
+===================================================== */
+
+.services-section {
+
+    background: var(--off-white);
+
+    color: var(--navy-dark);
+
+    padding: 50px 0;
+}
+
+
+/* ==================== Heading ==================== */
+
+.section-heading-light {
+
+    max-width: 700px;
+}
+
+.section-heading-light h2 {
+
+    color: var(--navy-dark);
+}
+
+.section-heading-light p {
+
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    color: #68727a;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+/* ==================== Services Grid ==================== */
+
+.services-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 70px;
+
+    border-top: 1px solid #ddd8cf;
+
+    border-bottom: 1px solid #ddd8cf;
+}
+
+
+/* ==================== Service Card ==================== */
+
+.service-card {
+
+    position: relative;
+
+    min-height: 390px;
+
+    padding: 40px 28px;
+
+    background: transparent;
+
+    border-left: 1px solid #ddd8cf;
+
+    overflow: hidden;
+
+    transition: var(--transition);
+}
+
+.service-card:last-child {
+
+    border-left: none;
+}
+
+
+/* ==================== Hover Effect ==================== */
+
+.service-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: var(--gold);
+
+    opacity: 0;
+
+    transform: translateY(100%);
+
+    transition: var(--transition);
+
+    z-index: 0;
+}
+
+.service-card:hover::before {
+
+    opacity: 0.07;
+
+    transform: translateY(0);
+}
+
+
+/* ==================== Number ==================== */
+
+.service-number {
+
+    position: absolute;
+
+    top: 30px;
+
+    left: 28px;
+
+    color: rgba(28, 36, 55, 0.18);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+
+    z-index: 1;
+}
+
+
+/* ==================== Icon ==================== */
+
+.service-icon {
+
+    position: relative;
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    background: transparent;
+
+    font-size: 19px;
+
+    margin-bottom: 35px;
+
+    transition: var(--transition);
+
+    z-index: 1;
+}
+
+.service-card:hover .service-icon {
+
+    background: var(--gold);
+
+    color: var(--white);
+
+    transform: translateY(-5px);
+}
+
+
+/* ==================== Text ==================== */
+
+.service-card h3 {
+
+    position: relative;
+
+    color: var(--navy-dark);
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    margin-bottom: 18px;
+
+    z-index: 1;
+}
+
+.service-card p {
+
+    position: relative;
+
+    color: #68727a;
+
+    font-size: 13px;
+
+    line-height: 2;
+
+    margin-bottom: 25px;
+
+    z-index: 1;
+}
+
+
+/* ==================== Link ==================== */
+
+.service-link {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--navy-dark);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+    z-index: 1;
+}
+
+.service-link i {
+
+    color: var(--gold);
+
+    transition: var(--transition);
+}
+
+.service-link:hover {
+
+    color: var(--gold);
+}
+
+.service-link:hover i {
+
+    transform: translateX(-5px);
+}
+
+
+/* =====================================================
+   Projects Section
+===================================================== */
+
+.projects-section {
+
+    background: var(--off-white);
+
+    color: var(--navy-dark);
+
+    padding: 50px 0;
+}
+
+
+/* ==================== Heading ==================== */
+
+.projects-intro {
+
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    color: #68727a;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+/* ==================== Projects Grid ==================== */
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+
+    margin-top: 70px;
+}
+
+
+/* ==================== Project Card ==================== */
+
+.project-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--navy-dark);
+}
+
+
+/* ==================== Project Image ==================== */
+
+.project-image {
+
+    position: relative;
+
+    height: 430px;
+
+    overflow: hidden;
+}
+
+.project-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.8s ease;
+}
+
+
+/* ==================== Overlay ==================== */
+
+.project-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(28, 36, 55, 0.95) 0%,
+            rgba(28, 36, 55, 0.35) 50%,
+            rgba(28, 36, 55, 0) 100%
+        );
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition: var(--transition);
+}
+
+
+/* ==================== Hover ==================== */
+
+.project-card:hover .project-image img {
+
+    transform: scale(1.07);
+}
+
+.project-card:hover .project-overlay {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ==================== Project Category ==================== */
+
+.project-category {
+
+    color: var(--gold-light);
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==================== Project Title ==================== */
+
+.project-overlay h3 {
+
+    color: var(--white);
+
+    font-size: 27px;
+
+    font-weight: 500;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==================== Project Link ==================== */
+
+.project-link {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    transition: var(--transition);
+}
+
+.project-link:hover {
+
+    background: var(--gold);
+
+    color: var(--navy-dark);
+}
+
+
+/* ==================== Projects Action ==================== */
+
+.projects-action {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 55px;
+}
+
+
+/* =====================================================
+   Founder Section
+===================================================== */
+
+.founder-section {
+
+    background: var(--off-white);
+
+    padding: 50px 0;
+
+    color: var(--navy-dark);
+}
+
+
+/* ==================== Content ==================== */
+
+.founder-content {
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    align-items: center;
+
+    gap: 90px;
+}
+
+
+/* ==================== Image ==================== */
+
+.founder-image {
+
+    position: relative;
+
+    height: 620px;
+
+    overflow: visible;
+}
+
+.founder-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    position: relative;
+
+    z-index: 2;
+
+    transition: transform 0.8s ease;
+}
+
+.founder-image:hover img {
+
+    transform: translate(-8px, -8px);
+}
+
+
+/* ==================== Image Frame ==================== */
+
+.founder-image-frame {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: -25px;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 1px solid var(--gold);
+
+    z-index: 1;
+}
+
+
+/* ==================== Founder Text ==================== */
+
+.founder-text {
+
+    max-width: 650px;
+}
+
+.founder-text h2 {
+
+    color: var(--navy-dark);
+
+    font-size: clamp(38px, 5vw, 60px);
+
+    font-weight: 500;
+
+    line-height: 1.25;
+
+    margin-bottom: 20px;
+}
+
+.founder-text h2 span {
+
+    display: block;
+
+    color: var(--gold);
+
+    font-weight: 600;
+}
+
+.founder-text h3 {
+
+    color: var(--navy-dark);
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.founder-text > p {
+
+    color: #68727a;
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================== Details ==================== */
+
+.founder-details {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    margin-top: 35px;
+
+    border-top: 1px solid #ddd8cf;
+
+    border-bottom: 1px solid #ddd8cf;
+}
+
+.founder-detail {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 20px 0;
+}
+
+.founder-detail:first-child {
+
+    border-left: 1px solid #ddd8cf;
+
+    padding-left: 25px;
+}
+
+.founder-detail span {
+
+    color: #8a9298;
+
+    font-size: 11px;
+}
+
+.founder-detail strong {
+
+    color: var(--navy-dark);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* ==================== Quote ==================== */
+
+.founder-text blockquote {
+
+    position: relative;
+
+    margin-top: 35px;
+
+    padding: 25px 30px;
+
+    border-right: 2px solid var(--gold);
+
+    background: rgba(199, 161, 90, 0.06);
+}
+
+.founder-text blockquote i {
+
+    color: var(--gold);
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+.founder-text blockquote p {
+
+    color: var(--navy-dark);
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   Contact Section
+===================================================== */
+
+.contact-section {
+
+    background: var(--navy-dark);
+
+    color: var(--white);
+
+    padding: 120px 0 70px;
+}
+
+
+/* ==================== Contact Content ==================== */
+
+.contact-content {
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+/* ==================== Intro ==================== */
+
+.contact-intro {
+
+    max-width: 650px;
+}
+
+.contact-intro .section-label {
+
+    color: var(--gold-light);
+}
+
+.contact-intro h2 {
+
+    color: var(--white);
+
+    font-size: clamp(42px, 5vw, 65px);
+
+    font-weight: 500;
+
+    line-height: 1.25;
+
+    margin-bottom: 25px;
+}
+
+.contact-intro h2 span {
+
+    color: var(--gold);
+
+    font-weight: 600;
+}
+
+.contact-intro > p {
+
+    max-width: 560px;
+
+    color: var(--text-muted);
+
+    font-size: 15px;
+
+    line-height: 2;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==================== WhatsApp ==================== */
+
+.contact-whatsapp {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 22px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--white);
+
+    font-size: 13px;
+
+    transition: var(--transition);
+}
+
+.contact-whatsapp i:first-child {
+
+    color: var(--gold);
+
+    font-size: 21px;
+}
+
+.contact-whatsapp i:last-child {
+
+    color: var(--gold);
+
+    transition: var(--transition);
+}
+
+.contact-whatsapp:hover {
+
+    background: var(--gold);
+
+    color: var(--navy-dark);
+}
+
+.contact-whatsapp:hover i {
+
+    color: var(--navy-dark);
+}
+
+.contact-whatsapp:hover i:last-child {
+
+    transform: translateX(-5px);
+}
+
+
+/* ==================== Contact Info ==================== */
+
+.contact-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* ==================== Contact Item ==================== */
+
+.contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 22px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--white);
+
+    transition: var(--transition);
+}
+
+.contact-item:last-child {
+
+    border-bottom: none;
+}
+
+.contact-item:hover {
+
+    padding-right: 8px;
+}
+
+.contact-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(199, 161, 90, 0.5);
+
+    color: var(--gold);
+
+    transition: var(--transition);
+}
+
+.contact-item:hover .contact-icon {
+
+    background: var(--gold);
+
+    color: var(--navy-dark);
+}
+
+
+/* ==================== Contact Text ==================== */
+
+.contact-item div:last-child {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.contact-item span {
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+.contact-item strong {
+
+    color: var(--white);
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+/* ==================== Social ==================== */
+
+.contact-social {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 80px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+}
+
+.contact-social > span {
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+.social-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.social-links a {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    color: var(--text-muted);
+
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+
+    border-color: var(--gold);
+
+    color: var(--gold);
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   Footer
+===================================================== */
+
+.footer {
+
+    background: #171e2d;
+
+    color: var(--white);
+
+    padding: 70px 0 25px;
+}
+
+
+/* ==================== Footer Content ==================== */
+
+.footer-content {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    gap: 70px;
+
+    padding-bottom: 60px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* ==================== Footer Brand ==================== */
+
+.footer-brand {
+
+    max-width: 300px;
+}
+
+.footer-logo img {
+
+    width: 120px;
+
+    height: 70px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    line-height: 2;
+}
+
+
+/* ==================== Footer Titles ==================== */
+
+.footer-links h3,
+.footer-contact h3 {
+
+    color: var(--gold);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==================== Footer Links ==================== */
+
+.footer-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.footer-links a {
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+
+    color: var(--gold);
+
+    transform: translateX(-4px);
+}
+
+
+/* ==================== Footer Contact ==================== */
+
+.footer-contact {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.footer-contact a,
+.footer-contact span {
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    transition: var(--transition);
+}
+
+.footer-contact a:hover {
+
+    color: var(--gold);
+}
+
+
+/* ==================== Footer Bottom ==================== */
+
+.footer-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 25px;
+}
+
+.footer-bottom p {
+
+    color: #727c87;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   Floating WhatsApp
+===================================================== */
+
+.floating-whatsapp {
+
+    position: fixed;
+
+    bottom: 25px;
+
+    left: 25px;
+
+    z-index: 1100;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px 18px;
+
+    background: #25D366;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s ease;
+
+    animation: whatsappPulse 2.5s infinite;
+}
+
+.floating-whatsapp i {
+
+    font-size: 20px;
+}
+
+.floating-whatsapp:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+@keyframes whatsappPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    50% {
+
+        box-shadow:
+            0 8px 25px rgba(37, 211, 102, 0.35);
+    }
+}
+
+
+/* =====================================================
+   Responsive
+===================================================== */
+
+
+/* ==================== Tablet ==================== */
+
+@media (max-width: 1000px) {
+
+    .nav-menu {
+
+        gap: 18px;
+    }
+
+   
+    .services-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card:nth-child(2) {
+
+        border-left: none;
+    }
+
+    .service-card:nth-child(-n + 2) {
+
+        border-bottom: 1px solid #ddd8cf;
+    }
+}
+
+
+/* ==================== About / Founder / Contact ==================== */
+
 @media (max-width: 900px) {
 
     .about-section {
@@ -1054,8 +2203,205 @@ ul {
         max-width: 100%;
     }
 
+
+    .founder-section {
+
+        padding: 90px 0;
+    }
+
+    .founder-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .founder-image {
+
+        height: 550px;
+
+        max-width: 650px;
+
+        margin: 0 auto;
+    }
+
+    .founder-text {
+
+        max-width: 100%;
+    }
+
+
+    .contact-section {
+
+        padding: 90px 0 60px;
+    }
+
+    .contact-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .contact-info {
+
+        max-width: 650px;
+    }
 }
 
+
+/* ==================== Mobile Navbar ==================== */
+
+@media (max-width: 800px) {
+
+    .header {
+
+        padding: 16px 0;
+    }
+
+    .navbar {
+
+        position: relative;
+    }
+
+    .logo-image {
+
+        width: 100px;
+
+        height: 60px;
+    }
+
+    .menu-toggle {
+
+        display: block;
+    }
+
+    .nav-menu {
+
+        position: absolute;
+
+        top: calc(100% + 10px);
+
+        right: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: rgba(28, 36, 55, 0.98);
+
+        backdrop-filter: blur(12px);
+
+        -webkit-backdrop-filter: blur(12px);
+
+        border: 1px solid rgba(199, 161, 90, 0.2);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition: var(--transition);
+    }
+
+    .nav-menu.active {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+
+    .nav-link {
+
+        width: 100%;
+
+        padding: 5px 0;
+    }
+
+    .nav-link::after {
+
+        bottom: 0;
+    }
+
+
+    .hero h1 {
+
+        font-size: clamp(38px, 10vw, 60px);
+
+        letter-spacing: -1px;
+    }
+
+    .hero-info {
+
+        display: none;
+    }
+
+    .scroll-down {
+
+        display: none;
+    }
+
+
+    .projects-section {
+
+        padding: 90px 0;
+    }
+
+    .projects-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin-top: 50px;
+    }
+
+    .project-image {
+
+        height: 400px;
+    }
+
+    .project-overlay {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+
+    .footer {
+
+        padding-top: 60px;
+    }
+
+    .footer-content {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 45px;
+    }
+
+    .footer-brand {
+
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* ==================== Small Mobile ==================== */
 
 @media (max-width: 600px) {
 
@@ -1071,7 +2417,9 @@ ul {
 
     .about-image {
 
-      aspect-ratio: 4 / 5;
+        aspect-ratio: 4 / 5;
+
+        height: auto;
     }
 
     .about-image-badge {
@@ -1105,6 +2453,1275 @@ ul {
     .value-item:last-child {
 
         border-bottom: none;
+    }
+
+
+    .services-section {
+
+        padding: 80px 0;
+    }
+
+    .services-grid {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 50px;
+    }
+
+    .service-card {
+
+        min-height: auto;
+
+        padding: 35px 20px;
+
+        border-left: none;
+
+        border-bottom: 1px solid #ddd8cf;
+    }
+
+    .service-card:last-child {
+
+        border-bottom: none;
+    }
+
+
+    .projects-section {
+
+        padding: 75px 0;
+    }
+
+    .project-image {
+
+        height: 350px;
+    }
+
+    .project-overlay {
+
+        padding: 25px;
+    }
+
+    .project-overlay h3 {
+
+        font-size: 22px;
+    }
+
+
+    .founder-section {
+
+        padding: 75px 0;
+    }
+
+    .founder-image {
+
+        height: 450px;
+    }
+
+    .founder-image-frame {
+
+        top: 15px;
+
+        right: -15px;
+    }
+
+    .founder-text h2 {
+
+        font-size: 38px;
+    }
+
+    .founder-text h3 {
+
+        font-size: 19px;
+    }
+
+    .founder-details {
+
+        grid-template-columns: 1fr;
+    }
+
+    .founder-detail:first-child {
+
+        border-left: none;
+
+        border-bottom: 1px solid #ddd8cf;
+
+        padding-left: 0;
+    }
+
+    .founder-text blockquote {
+
+        padding: 20px;
+    }
+
+
+    .contact-section {
+
+        padding: 75px 0 50px;
+    }
+
+    .contact-intro h2 {
+
+        font-size: 42px;
+    }
+
+    .contact-intro > p {
+
+        font-size: 14px;
+    }
+
+    .contact-whatsapp {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .contact-social {
+
+        margin-top: 55px;
+    }
+
+
+    .footer-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding-bottom: 40px;
+    }
+
+    .footer-brand {
+
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+
+    .floating-whatsapp {
+
+        width: 52px;
+
+        height: 52px;
+
+        padding: 0;
+
+        border-radius: 50%;
+
+        justify-content: center;
+
+        bottom: 20px;
+
+        left: 20px;
+    }
+
+    .floating-whatsapp span {
+
+        display: none;
+    }
+
+    .floating-whatsapp i {
+
+        font-size: 23px;
+    }
+}
+
+
+/* ==================== Very Small Screens ==================== */
+
+@media (max-width: 380px) {
+
+    .container {
+
+        width: 92%;
+    }
+
+    .hero h1 {
+
+        font-size: 36px;
+    }
+
+    .hero p {
+
+        font-size: 13px;
+    }
+
+    .btn {
+
+        min-width: 100%;
+
+        width: 100%;
+    }
+
+    .about-image-badge {
+
+        right: 15px;
+
+        bottom: 15px;
+
+        padding: 12px 15px;
+    }
+
+    .about-image-badge strong {
+
+        font-size: 23px;
+    }
+}
+
+.developer-link {
+    color: var(--text-muted);
+    transition: var(--transition);
+    border-bottom: 1px solid transparent;
+}
+
+.developer-link:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+}
+
+/* =====================================================
+   Project Assistant
+===================================================== */
+
+.project-start-btn {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* ==================== Modal ==================== */
+
+.assistant-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.assistant-modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ==================== Overlay ==================== */
+
+.assistant-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(7, 15, 25, 0.82);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* ==================== Box ==================== */
+
+.assistant-box {
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 760px);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: var(--off-white);
+    color: var(--navy-dark);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(30px) scale(0.97);
+
+    transition: transform 0.4s ease;
+}
+
+.assistant-modal.active .assistant-box {
+    transform: translateY(0) scale(1);
+}
+
+
+/* ==================== Header ==================== */
+
+.assistant-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 35px 40px 25px;
+
+    border-bottom: 1px solid #ddd8cf;
+}
+
+.assistant-label {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.assistant-header h2 {
+    color: var(--navy-dark);
+
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.assistant-header h2 span {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+
+/* ==================== Close ==================== */
+
+.assistant-close {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ddd8cf;
+
+    background: transparent;
+
+    color: var(--navy-dark);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.assistant-close:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+
+    color: var(--white);
+}
+
+
+/* ==================== Progress ==================== */
+
+.assistant-progress {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 20px 40px;
+}
+
+.progress-bar {
+    flex: 1;
+
+    height: 3px;
+
+    background: #ddd8cf;
+
+    overflow: hidden;
+}
+
+.progress-bar span {
+    display: block;
+
+    width: 25%;
+    height: 100%;
+
+    background: var(--gold);
+
+    transition: width 0.4s ease;
+}
+
+#assistantStepText {
+    color: #8a9298;
+    font-size: 11px;
+}
+
+
+/* ==================== Content ==================== */
+
+.assistant-content {
+    padding: 25px 40px 40px;
+}
+
+
+/* ==================== Steps ==================== */
+
+.assistant-step {
+    display: none;
+
+    animation: assistantFade 0.4s ease;
+}
+
+.assistant-step.active {
+    display: block;
+}
+
+@keyframes assistantFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==================== Step Heading ==================== */
+
+.step-number {
+    display: block;
+
+    color: var(--gold);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.assistant-step h3 {
+    color: var(--navy-dark);
+
+    font-size: 27px;
+    font-weight: 500;
+
+    margin-bottom: 10px;
+}
+
+.assistant-step > p {
+    color: #68727a;
+
+    font-size: 13px;
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==================== Options ==================== */
+
+.assistant-options {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.assistant-option {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 75px;
+
+    padding: 15px 18px;
+
+    border: 1px solid #ddd8cf;
+
+    background: transparent;
+
+    color: var(--navy-dark);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    text-align: right;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.assistant-option i {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    transition: var(--transition);
+}
+
+.assistant-option:hover {
+    border-color: var(--gold);
+
+    transform: translateY(-2px);
+}
+
+.assistant-option:hover i {
+    background: var(--gold);
+
+    color: var(--white);
+}
+
+
+/* ==================== Fields ==================== */
+
+.assistant-fields {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.assistant-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.assistant-field label {
+    color: var(--navy-dark);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+
+    top: 50%;
+    right: 16px;
+
+    transform: translateY(-50%);
+
+    color: var(--gold);
+}
+
+.assistant-field input,
+.assistant-field textarea {
+    width: 100%;
+
+    border: 1px solid #ddd8cf;
+
+    background: var(--white);
+
+    color: var(--navy-dark);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+.assistant-field input {
+    height: 50px;
+
+    padding: 0 45px 0 15px;
+}
+
+.assistant-field textarea {
+    resize: vertical;
+
+    min-height: 110px;
+
+    padding: 15px;
+}
+
+.assistant-field input:focus,
+.assistant-field textarea:focus {
+    border-color: var(--gold);
+
+    box-shadow: 0 0 0 3px rgba(199, 161, 90, 0.08);
+}
+
+
+/* ==================== Next Button ==================== */
+
+.assistant-next {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border: none;
+
+    background: var(--navy-dark);
+
+    color: var(--white);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.assistant-next:hover {
+    background: var(--gold);
+
+    color: var(--navy-dark);
+}
+
+.assistant-next i {
+    transition: var(--transition);
+}
+
+.assistant-next:hover i {
+    transform: translateX(-5px);
+}
+
+
+/* ==================== Result ==================== */
+
+.assistant-step[data-step="4"] {
+    text-align: center;
+}
+
+.assistant-result-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 25px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    font-size: 25px;
+}
+
+.assistant-step[data-step="4"] .step-number {
+    margin-bottom: 10px;
+}
+
+.assistant-step[data-step="4"] h3 {
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.recommendation-text {
+    max-width: 570px;
+
+    margin: 0 auto 25px;
+
+    color: #68727a;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+.recommendation-box {
+    max-width: 500px;
+
+    margin: 0 auto 20px;
+
+    padding: 20px;
+
+    border-right: 2px solid var(--gold);
+
+    background: rgba(199, 161, 90, 0.07);
+
+    text-align: right;
+}
+
+.recommendation-box span {
+    display: block;
+
+    color: #8a9298;
+
+    font-size: 11px;
+
+    margin-bottom: 7px;
+}
+
+.recommendation-box strong {
+    color: var(--navy-dark);
+
+    font-size: 14px;
+}
+
+.assistant-note {
+    max-width: 520px;
+
+    margin: 0 auto 25px;
+
+    color: #8a9298 !important;
+
+    font-size: 11px !important;
+
+    line-height: 1.8 !important;
+}
+
+
+/* ==================== Result Actions ==================== */
+
+.assistant-result-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.assistant-contact-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 13px 22px;
+
+    background: var(--gold);
+
+    color: var(--navy-dark);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.assistant-contact-btn:hover {
+    background: var(--navy-dark);
+
+    color: var(--white);
+}
+
+.assistant-restart {
+    padding: 13px 22px;
+
+    border: 1px solid #ddd8cf;
+
+    background: transparent;
+
+    color: var(--navy-dark);
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.assistant-restart:hover {
+    border-color: var(--gold);
+
+    color: var(--gold);
+}
+
+
+/* =====================================================
+   Assistant Responsive
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .assistant-modal {
+        padding: 12px;
+    }
+
+    .assistant-box {
+        max-height: 94vh;
+    }
+
+    .assistant-header {
+        padding: 25px 20px 20px;
+    }
+
+    .assistant-header h2 {
+        font-size: 22px;
+    }
+
+    .assistant-progress {
+        padding: 15px 20px;
+    }
+
+    .assistant-content {
+        padding: 20px;
+    }
+
+    .assistant-options {
+        grid-template-columns: 1fr;
+    }
+
+    .assistant-option {
+        min-height: 65px;
+    }
+
+    .assistant-step h3 {
+        font-size: 23px;
+    }
+
+    .assistant-result-actions {
+        flex-direction: column;
+    }
+
+    .assistant-contact-btn,
+    .assistant-restart {
+        width: 100%;
+    }
+
+}
+
+
+
+/* ==================== Project Hover ==================== */
+
+.project-card:hover .project-image img {
+    transform: scale(1.06);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==================== Project Text ==================== */
+
+.project-overlay h3 {
+    font-size: 26px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.project-overlay h3 span {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.project-description {
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 8px 0 12px;
+    max-width: 650px;
+}
+
+.project-name-en {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    opacity: 0.75;
+    direction: ltr;
+    display: inline-block;
+}
+
+
+/* =====================================================
+   Project Modal
+===================================================== */
+
+.project-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease,
+                visibility 0.35s ease;
+}
+
+
+.project-modal.active {
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+/* ==================== Overlay ==================== */
+
+.project-modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(10, 15, 25, 0.82);
+
+    backdrop-filter: blur(7px);
+}
+
+
+/* ==================== Modal Box ==================== */
+
+.project-modal-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1000px, 100%);
+
+    max-height: 90vh;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #ffffff;
+
+    color: var(--navy-dark);
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(30px) scale(0.97);
+
+    transition: transform 0.35s ease;
+}
+
+
+.project-modal.active .project-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+
+/* ==================== Close Button ==================== */
+
+.project-modal-close {
+    position: absolute;
+
+    top: 18px;
+
+    left: 18px;
+
+    z-index: 5;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(28, 36, 55, 0.9);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: var(--transition);
+}
+
+
+.project-modal-close:hover {
+    transform: rotate(90deg);
+
+    background: var(--navy-dark);
+}
+
+
+/* ==================== Modal Image ==================== */
+
+.project-modal-image {
+    min-height: 560px;
+
+    background: #e9e9e9;
+}
+
+
+.project-modal-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ==================== Modal Information ==================== */
+
+.project-modal-info {
+    padding: 55px 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    overflow-y: auto;
+}
+
+
+.project-modal-category {
+    color: #9b8060;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+
+.project-modal-info h2 {
+    color: var(--navy-dark);
+
+    font-size: 32px;
+
+    line-height: 1.5;
+
+    margin: 0 0 8px;
+}
+
+
+.project-modal-en {
+    direction: ltr;
+
+    text-align: right;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 15px;
+
+    color: #777;
+
+    display: block;
+}
+
+
+.project-modal-divider {
+    width: 55px;
+
+    height: 2px;
+
+    background: #9b8060;
+
+    margin: 25px 0;
+}
+
+
+.project-modal-description-title {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: var(--navy-dark);
+
+    margin-bottom: 12px;
+}
+
+
+.project-modal-info p {
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    margin: 0;
+}
+
+
+/* ==================== Contact Button ==================== */
+
+.project-modal-contact {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    width: fit-content;
+
+    margin-top: 30px;
+
+    padding: 13px 22px;
+
+    background: var(--navy-dark);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: var(--transition);
+}
+
+
+.project-modal-contact:hover {
+    transform: translateX(-5px);
+
+    background: #29344d;
+}
+
+
+/* =====================================================
+   Project Card Button
+===================================================== */
+
+.project-details-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    margin-top: 12px;
+
+    padding: 11px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    font-family: "Cairo", sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(5px);
+
+    transition: var(--transition);
+}
+
+
+.project-details-btn:hover {
+    background: #ffffff;
+
+    color: var(--navy-dark);
+
+    transform: translateX(-5px);
+}
+
+
+/* =====================================================
+   Mobile
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .project-modal {
+        padding: 15px;
+    }
+
+
+    .project-modal-content {
+        display: block;
+
+        max-height: 92vh;
+
+        overflow-y: auto;
+    }
+
+
+    .project-modal-image {
+        height: 280px;
+
+        min-height: auto;
+    }
+
+
+    .project-modal-info {
+        padding: 35px 25px;
+    }
+
+
+    .project-modal-info h2 {
+        font-size: 25px;
+    }
+
+
+    .project-modal-info p {
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+
+    .project-modal-close {
+        top: 12px;
+
+        left: 12px;
     }
 
 }

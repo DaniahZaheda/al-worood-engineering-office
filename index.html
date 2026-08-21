@@ -9,9 +9,14 @@
     <meta name="description"
         content="مكتب الورود الهندسي - حلول معمارية وهندسية تجمع بين الإبداع، الوظيفة، ودقة التفاصيل.">
 
-    <title>مكتب الورود الهندسي | هندسة تصنع الفرق</title>
+    <meta name="theme-color" content="#1c2437">
 
-    <!-- Google Fonts -->
+    <title>مكتب الورود الهندسي </title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+
+    <!-- ==================== Google Fonts ==================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -19,81 +24,98 @@
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
+
+    <!-- ==================== Font Awesome ==================== -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Main CSS -->
+
+    <!-- ==================== Main CSS ==================== -->
+
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
-    <!-- ==================== Header ==================== -->
+
+    <!-- =====================================================
+         Header
+    ===================================================== -->
 
     <header class="header" id="header">
 
-        <nav class="navbar container">
+        <nav class="navbar container" aria-label="القائمة الرئيسية">
 
-            <!-- Logo -->
-            <a href="#home" class="logo">
+
+            <!-- ==================== Logo ==================== -->
+
+            <a href="#home" class="logo" aria-label="مكتب الورود الهندسي - الرئيسية">
 
                 <img src="assets/images/logo.png" alt="شعار مكتب الورود الهندسي" class="logo-image">
 
-
             </a>
 
 
-            <!-- Navigation -->
-            <ul class="nav-menu" id="navMenu">
+  <!-- ==================== Navigation ==================== -->
 
-                <li>
-                    <a href="#home" class="nav-link active">
-                        الرئيسية
-                    </a>
-                </li>
+<ul class="nav-menu" id="navMenu">
 
-                <li>
-                    <a href="#about" class="nav-link">
-                        من نحن
-                    </a>
-                </li>
+    <li>
+        <a href="#home" class="nav-link active">
+            الرئيسية
+        </a>
+    </li>
 
-                <li>
-                    <a href="#services" class="nav-link">
-                        خدماتنا
-                    </a>
-                </li>
+    <li>
+        <a href="#about" class="nav-link">
+            من نحن
+        </a>
+    </li>
 
-                <li>
-                    <a href="#projects" class="nav-link">
-                        مشاريعنا
-                    </a>
-                </li>
+    <li>
+        <a href="#services" class="nav-link">
+            خدماتنا
+        </a>
+    </li>
 
-                <li>
-                    <a href="#architect" class="nav-link">
-                        المهندسة ورود
-                    </a>
-                </li>
+    <li>
+        <a href="#projects" class="nav-link">
+            مشاريعنا
+        </a>
+    </li>
 
-                <li>
-                    <a href="#contact" class="nav-link">
-                        تواصل معنا
-                    </a>
-                </li>
+    <li>
+        <a href="#founder" class="nav-link">
+            المهندسة ورود
+        </a>
+    </li>
 
-            </ul>
+    <li>
+        <a href="#contact" class="nav-link">
+            تواصل معنا
+        </a>
+    </li>
 
-
-            <!-- CTA -->
-            <a href="#contact" class="nav-contact">
-                ابدأ مشروعك
-                <i class="fa-solid fa-arrow-left"></i>
-            </a>
+</ul>
 
 
-            <!-- Mobile Menu -->
-            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+<!-- ==================== CTA ==================== -->
+
+<button class="nav-contact project-start-btn" id="openProjectAssistant" type="button">
+
+    ابدأ مشروعك
+
+    <i class="fa-solid fa-arrow-left"></i>
+
+</button>
+
+
+            <!-- ==================== Mobile Menu ==================== -->
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false"
+                aria-controls="navMenu">
 
                 <i class="fa-solid fa-bars"></i>
 
@@ -104,15 +126,23 @@
     </header>
 
 
-    <!-- ==================== Main ==================== -->
+
+    <!-- =====================================================
+         Main
+    ===================================================== -->
 
     <main>
 
-        <!-- ==================== Hero ==================== -->
+
+        <!-- =================================================
+             Hero Section
+        ================================================= -->
 
         <section class="hero" id="home">
 
+
             <!-- Background -->
+
             <div class="hero-background">
 
                 <div class="hero-overlay"></div>
@@ -120,10 +150,14 @@
             </div>
 
 
-            <!-- Content -->
+            <!-- Hero Content -->
+
             <div class="container hero-content">
 
                 <div class="hero-text">
+
+
+                    <!-- Label -->
 
                     <span class="hero-label">
 
@@ -133,6 +167,8 @@
 
                     </span>
 
+
+                    <!-- Title -->
 
                     <h1>
 
@@ -145,6 +181,8 @@
                     </h1>
 
 
+                    <!-- Description -->
+
                     <p>
                         حلول معمارية وهندسية تجمع بين الإبداع،
                         الوظيفة، ودقة التفاصيل لنصنع مساحات
@@ -152,11 +190,15 @@
                     </p>
 
 
+                    <!-- Buttons -->
+
                     <div class="hero-buttons">
 
                         <a href="#projects" class="btn btn-primary">
 
-                            استكشف مشاريعنا
+                            <span>
+                                استكشف مشاريعنا
+                            </span>
 
                             <i class="fa-solid fa-arrow-left"></i>
 
@@ -174,8 +216,10 @@
                 </div>
 
 
-                <!-- Hero Info -->
+                <!-- Hero Information -->
+
                 <div class="hero-info">
+
 
                     <div class="hero-info-item">
 
@@ -215,6 +259,7 @@
 
 
             <!-- Scroll Indicator -->
+
             <a href="#about" class="scroll-down">
 
                 <span>
@@ -227,13 +272,19 @@
 
         </section>
 
-        <!-- ==================== About ==================== -->
+
+
+        <!-- =================================================
+             About Section
+        ================================================= -->
 
         <section class="about-section" id="about">
 
-            <div class="container about-container">
+            <div class="container">
+
 
                 <!-- Section Heading -->
+
                 <div class="section-heading">
 
                     <span class="section-label">
@@ -241,25 +292,33 @@
                     </span>
 
                     <h2>
-                        حيث تلتقي
-                        <span>الفكرة بالتفاصيل</span>
+
+                        حيث تلتقي الفكرة بالتفاصيل
+
+                       
+
                     </h2>
 
                 </div>
 
 
                 <!-- About Content -->
+
                 <div class="about-content">
 
+
                     <!-- Image -->
+
                     <div class="about-image">
 
-                        <img src="assets/images/about.jpg"
-                            alt="تصميم معماري داخلي">
+                        <img src="assets/images/about.jpg" alt="تصميم معماري داخلي" loading="lazy">
+
 
                         <div class="about-image-badge">
 
-                            <strong>01</strong>
+                            <strong>
+                                01
+                            </strong>
 
                             <span>
                                 رؤيتنا
@@ -271,23 +330,31 @@
 
 
                     <!-- Text -->
+
                     <div class="about-text">
 
-                        <span class="about-subtitle">
-                            مكتب الورود الهندسي
-                        </span>
+                       
+
 
                         <h3>
+
                             نصنع مساحات
+
                             <br>
-                            <span>تحمل معنى</span>
+
+                            <span>
+                                تحمل معنى
+                            </span>
+
                         </h3>
+
 
                         <p>
                             في مكتب الورود الهندسي، نؤمن أن العمارة ليست مجرد
                             مبانٍ، بل هي تجربة ومساحة تعكس احتياجات الإنسان
                             وشخصيته وطموحاته.
                         </p>
+
 
                         <p>
                             نعمل على تقديم حلول معمارية وهندسية تجمع بين
@@ -297,7 +364,11 @@
 
 
                         <!-- Values -->
+
                         <div class="about-values">
+
+
+                            <!-- Value 01 -->
 
                             <div class="value-item">
 
@@ -306,6 +377,7 @@
                                 </span>
 
                                 <div>
+
                                     <strong>
                                         الإبداع
                                     </strong>
@@ -313,10 +385,13 @@
                                     <p>
                                         أفكار معمارية تعكس هوية كل مشروع.
                                     </p>
+
                                 </div>
 
                             </div>
 
+
+                            <!-- Value 02 -->
 
                             <div class="value-item">
 
@@ -325,6 +400,7 @@
                                 </span>
 
                                 <div>
+
                                     <strong>
                                         الدقة
                                     </strong>
@@ -332,10 +408,13 @@
                                     <p>
                                         اهتمام بالتفاصيل في كل مرحلة.
                                     </p>
+
                                 </div>
 
                             </div>
 
+
+                            <!-- Value 03 -->
 
                             <div class="value-item">
 
@@ -344,6 +423,7 @@
                                 </span>
 
                                 <div>
+
                                     <strong>
                                         الجودة
                                     </strong>
@@ -351,6 +431,7 @@
                                     <p>
                                         حلول متوازنة بين الجمال والوظيفة.
                                     </p>
+
                                 </div>
 
                             </div>
@@ -358,7 +439,9 @@
                         </div>
 
 
-                        <a href="#architect" class="text-link">
+                        <!-- Founder Link -->
+
+                        <a href="#founder" class="text-link">
 
                             تعرف على المهندسة ورود
 
@@ -374,12 +457,1280 @@
 
         </section>
 
+
+
+        <!-- =================================================
+             Services Section
+        ================================================= -->
+
+        <section class="services-section" id="services">
+
+            <div class="container">
+
+
+                <!-- Heading -->
+
+                <div class="section-heading section-heading-light">
+
+                    <span class="section-label">
+                        خدماتنا
+                    </span>
+
+                    <h2>
+
+                     حلول هندسية متكاملة
+
+
+                    </h2>
+
+                    <p>
+                        نقدم خدمات معمارية وهندسية متكاملة، نعمل من خلالها
+                        على تحويل الأفكار إلى مساحات مدروسة تجمع بين
+                        الجمال والوظيفة والدقة.
+                    </p>
+
+                </div>
+
+
+                <!-- Services -->
+
+                <div class="services-grid">
+
+
+                    <!-- Service 01 -->
+
+                    <article class="service-card">
+
+                        <span class="service-number">
+                            01
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+
+                        <h3>
+                            التصميم المعماري
+                        </h3>
+
+                        <p>
+                            تصميم المشاريع المعمارية بما يتناسب مع احتياجات
+                            العميل وطبيعة الموقع والهوية المطلوبة.
+                        </p>
+
+                        <a href="#contact" class="service-link">
+
+                            اكتشف المزيد
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 02 -->
+
+                    <article class="service-card">
+
+                        <span class="service-number">
+                            02
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-ruler-combined"></i>
+                        </div>
+
+                        <h3>
+                            المخططات الهندسية
+                        </h3>
+
+                        <p>
+                            إعداد المخططات والتفاصيل الهندسية اللازمة
+                            للمشروع بدقة وتنظيم.
+                        </p>
+
+                        <a href="#contact" class="service-link">
+
+                            اكتشف المزيد
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 03 -->
+
+                    <article class="service-card">
+
+                        <span class="service-number">
+                            03
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-couch"></i>
+                        </div>
+
+                        <h3>
+                            التصميم الداخلي
+                        </h3>
+
+                        <p>
+                            تصميم المساحات الداخلية بطريقة تجمع بين
+                            الراحة والجمال والهوية الخاصة بالمكان.
+                        </p>
+
+                        <a href="#contact" class="service-link">
+
+                            اكتشف المزيد
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 04 -->
+
+                    <article class="service-card">
+
+                        <span class="service-number">
+                            04
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                        <h3>
+                            الإشراف الهندسي
+                        </h3>
+
+                        <p>
+                            متابعة مراحل تنفيذ المشروع والتأكد من توافق
+                            الأعمال مع المخططات والمتطلبات الهندسية.
+                        </p>
+
+                        <a href="#contact" class="service-link">
+
+                            اكتشف المزيد
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+<!-- =================================================
+     Projects Section
+================================================= -->
+
+<section class="projects-section" id="projects">
+
+    <div class="container">
+
+        <!-- Heading -->
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                مشاريعنا
+            </span>
+
+            <h2>
+                أعمال نفخر بها
+            </h2>
+
+            <p class="projects-intro">
+                مجموعة من المشاريع التي تعكس رؤيتنا في التصميم
+                المعماري والهندسي، وحرصنا على تقديم حلول تجمع
+                بين الجمال والوظيفة ودقة التفاصيل.
+            </p>
+
+        </div>
+
+
+        <!-- Projects Grid -->
+
+        <div class="projects-grid">
+
+
+            <!-- =========================================
+                 Project 01
+            ========================================== -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="assets/images/projects/project-01.jpeg"
+                        alt="فيلا سكنية فاخرة بالطراز الكلاسيكي الحديث"
+                        loading="lazy"
+                    >
+
+                    <div class="project-overlay">
+
+                        <span class="project-category">
+                            تصميم معماري
+                        </span>
+
+                        <h3>
+                            فيلا سكنية فاخرة
+                            <span>بالطراز الكلاسيكي الحديث</span>
+                        </h3>
+
+                        <button
+                            class="project-details-btn"
+                            type="button"
+                            data-project="project1"
+                        >
+                            عرض تفاصيل المشروع
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================================
+                 Project 02
+            ========================================== -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="assets/images/projects/project-02.jpeg"
+                        alt="مركز تجاري واستثماري حديث"
+                        loading="lazy"
+                    >
+
+                    <div class="project-overlay">
+
+                        <span class="project-category">
+                            مشروع تجاري واستثماري
+                        </span>
+
+                        <h3>
+                            مركز تجاري واستثماري حديث
+                        </h3>
+
+                        <button
+                            class="project-details-btn"
+                            type="button"
+                            data-project="project2"
+                        >
+                            عرض تفاصيل المشروع
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================================
+                 Project 03
+            ========================================== -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="assets/images/projects/project-03.png"
+                        alt="ديوان آل التميمي"
+                        loading="lazy"
+                    >
+
+                    <div class="project-overlay">
+
+                        <span class="project-category">
+                            تصميم معماري
+                        </span>
+
+                        <h3>
+                            ديوان آل التميمي
+                        </h3>
+
+                        <button
+                            class="project-details-btn"
+                            type="button"
+                            data-project="project3"
+                        >
+                            عرض تفاصيل المشروع
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================================
+                 Project 04
+            ========================================== -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="assets/images/projects/project-04.jpeg"
+                        alt="فيلا سكنية حديثة بالطراز المعاصر"
+                        loading="lazy"
+                    >
+
+                    <div class="project-overlay">
+
+                        <span class="project-category">
+                            تصميم معماري
+                        </span>
+
+                        <h3>
+                            فيلا سكنية حديثة
+                            <span>بالطراز المعاصر</span>
+                        </h3>
+
+                        <button
+                            class="project-details-btn"
+                            type="button"
+                            data-project="project4"
+                        >
+                            عرض تفاصيل المشروع
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- Projects Action -->
+
+        <div class="projects-action">
+
+            <a href="#contact" class="text-link">
+
+                تواصل معنا لمناقشة مشروعك
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     Project Details Modal
+================================================= -->
+
+<div
+    class="project-modal"
+    id="projectModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="project-modal-overlay"
+        id="projectModalOverlay"
+    ></div>
+
+
+    <div
+        class="project-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalProjectTitle"
+    >
+
+        <!-- Close -->
+
+        <button
+            class="project-modal-close"
+            id="projectModalClose"
+            type="button"
+            aria-label="إغلاق تفاصيل المشروع"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <!-- Image -->
+
+        <div class="project-modal-image">
+
+            <img
+                id="modalProjectImage"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+
+        <!-- Information -->
+
+        <div class="project-modal-info">
+
+            <span
+                class="project-modal-category"
+                id="modalProjectCategory"
+            ></span>
+
+
+            <h2 id="modalProjectTitle"></h2>
+
+
+            <span
+                class="project-modal-en"
+                id="modalProjectEnglish"
+            ></span>
+
+
+            <div class="project-modal-divider"></div>
+
+
+            <span class="project-modal-description-title">
+                وصف المشروع
+            </span>
+
+
+            <p id="modalProjectDescription"></p>
+
+
+            <a
+                href="#contact"
+                class="project-modal-contact"
+                id="modalProjectContact"
+            >
+                ناقش مشروعًا مشابهًا معنا
+
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+        <!-- =================================================
+             Founder Section
+        ================================================= -->
+
+        <section class="founder-section" id="founder">
+
+            <div class="container">
+
+                <div class="founder-content">
+
+
+                    <!-- Founder Image -->
+
+                    <div class="founder-image">
+
+                        <img src="assets/images/founder.jpg" alt="المهندسة ورود جمجوم" loading="lazy">
+
+                        <div class="founder-image-frame"></div>
+
+                    </div>
+
+
+                    <!-- Founder Content -->
+
+                    <div class="founder-text">
+
+                        <span class="section-label">
+                            صاحبة المكتب
+                        </span>
+
+
+                        <h2>
+
+                            المهندسة
+
+                            <span>
+                                ورود جمجوم
+                            </span>
+
+                        </h2>
+
+
+                        <h3>
+                            رؤية هندسية تبدأ من الفكرة
+                            وتصل إلى التفاصيل.
+                        </h3>
+
+
+                        <p>
+                            تقود المهندسة ورود جمجوم مكتب الورود الهندسي
+                            برؤية تجمع بين التصميم المعماري المدروس
+                            والاهتمام بالتفاصيل، مع الحرص على تقديم
+                            حلول هندسية تلبي احتياجات العملاء وتعبّر
+                            عن أسلوبهم الخاص.
+                        </p>
+
+
+                        <!-- Quote -->
+
+                        <blockquote>
+
+                            <i class="fa-solid fa-quote-right"></i>
+
+                            <p>
+                                نصمم المساحات التي تحمل معنى،
+                                وتبقى جميلة مع مرور الوقت.
+                            </p>
+
+                        </blockquote>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             Contact Section
+        ================================================= -->
+
+        <section class="contact-section" id="contact">
+
+            <div class="container">
+
+                <div class="contact-content">
+
+
+                    <!-- Contact Intro -->
+
+                    <div class="contact-intro">
+
+                        <span class="section-label">
+                            تواصل معنا
+                        </span>
+
+
+                        <h2>
+
+                            لنبدأ
+
+                            <span>
+                                مشروعك
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+                            لديك فكرة أو مشروع جديد؟
+                            يسعدنا الاستماع إلى احتياجاتك ومناقشة
+                            التفاصيل معك للوصول إلى الحل الهندسي
+                            المناسب.
+                        </p>
+
+
+                        <!-- WhatsApp -->
+
+                        <a href="https://wa.me/972599507161" target="_blank" rel="noopener noreferrer"
+                            class="contact-whatsapp">
+
+                            <i class="fa-brands fa-whatsapp"></i>
+
+                            <span>
+                                تواصل معنا عبر واتساب
+                            </span>
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- Contact Information -->
+
+                    <div class="contact-info">
+
+
+                        <!-- Phone -->
+
+                        <a href="tel:+972599507161" class="contact-item">
+
+                            <div class="contact-icon">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    الهاتف
+                                </span>
+
+                                <strong dir="ltr">
+                                    +972 599507161
+                                </strong>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- Email -->
+
+                        <a href="mailto:info@alworood.com" class="contact-item">
+
+                            <div class="contact-icon">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    البريد الإلكتروني
+                                </span>
+
+                                <strong>
+                                    info@alworood.com
+                                </strong>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- Location -->
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    الموقع
+                                </span>
+
+                                <strong>
+                                    فلسطين
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Working Hours -->
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+
+                                <i class="fa-regular fa-clock"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    ساعات العمل
+                                </span>
+
+                                <strong>
+                                    السبت – الخميس
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================== Social Media ==================== -->
+
+                <div class="contact-social">
+
+                    <span>
+                        تابعونا
+                    </span>
+
+
+                    <div class="social-links">
+
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+
+                        <a href="https://wa.me/972599507161" target="_blank" rel="noopener noreferrer"
+                            aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
 
+    <!-- =====================================================
+         Footer
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+
+                <!-- Footer Brand -->
+
+                <div class="footer-brand">
+
+                    <a href="#home" class="footer-logo" aria-label="العودة إلى الرئيسية">
+
+                        <img src="assets/images/logo.png" alt="مكتب الورود الهندسي">
+
+                    </a>
+
+
+                    <p>
+                        مكتب الورود الهندسي
+                        <br>
+                        تصميم يوازن بين الجمال والوظيفة.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Quick Links -->
+
+                <div class="footer-links">
+
+                    <h3>
+                        روابط سريعة
+                    </h3>
+
+                    <a href="#about">
+                        من نحن
+                    </a>
+
+                    <a href="#services">
+                        خدماتنا
+                    </a>
+
+                    <a href="#projects">
+                        مشاريعنا
+                    </a>
+
+                    <a href="#founder">
+                        المهندسة ورود
+                    </a>
+
+                    <a href="#contact">
+                        تواصل معنا
+                    </a>
+
+                </div>
+
+
+
+                <!-- Footer Contact -->
+
+                <div class="footer-contact">
+
+                    <h3>
+                        تواصل معنا
+                    </h3>
+
+                    <a href="tel:+972599507161">
+                        +972 599507161
+                    </a>
+
+                    <a href="mailto:info@alworood.com">
+                        info@alworood.com
+                    </a>
+
+                    <span>
+                        فلسطين
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Footer Bottom -->
+<div class="footer-bottom">
+
+
+
+    <p>
+        تصميم وتطوير الموقع:
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=daniahzaheda@gmail.com"
+    target="_blank"
+    rel="noopener"
+    class="developer-link">
+            DaniahMZ | Daniah Zaheda
+        </a>
+    </p>
+
+</div>
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         Floating WhatsApp
+    ===================================================== -->
+
+    <a href="https://wa.me/972599507161" target="_blank" rel="noopener noreferrer" class="floating-whatsapp"
+        aria-label="تواصل معنا عبر واتساب">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        <span>
+            تواصل معنا
+        </span>
+
+    </a>
+
+<!-- =====================================================
+     Project Assistant Modal
+===================================================== -->
+
+<div class="assistant-modal" id="projectAssistant" aria-hidden="true">
+
+    <div class="assistant-overlay" id="assistantOverlay"></div>
+
+    <div class="assistant-box" role="dialog" aria-modal="true">
+
+        <!-- Header -->
+
+        <div class="assistant-header">
+
+            <div>
+                <span class="assistant-label">
+                    مساعد المشروع
+                </span>
+
+                <h2>
+                    لنبدأ بفكرة <span>مشروعك</span>
+                </h2>
+            </div>
+
+            <button
+                class="assistant-close"
+                id="closeProjectAssistant"
+                aria-label="إغلاق"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Progress -->
+
+        <div class="assistant-progress">
+
+            <div class="progress-bar">
+                <span id="assistantProgress"></span>
+            </div>
+
+            <span id="assistantStepText">
+                1 من 4
+            </span>
+
+        </div>
+
+
+        <!-- Content -->
+
+        <div class="assistant-content">
+
+
+            <!-- Step 1 -->
+
+            <div class="assistant-step active" data-step="1">
+
+                <span class="step-number">
+                    01
+                </span>
+
+                <h3>
+                    ما نوع مشروعك؟
+                </h3>
+
+                <p>
+                    اختر النوع الأقرب لفكرتك لنساعدك بشكل أفضل.
+                </p>
+
+
+                <div class="assistant-options">
+
+                    <button
+                        class="assistant-option"
+                        data-value="residential"
+                    >
+                        <i class="fa-solid fa-house"></i>
+
+                        <span>
+                            منزل أو فيلا
+                        </span>
+                    </button>
+
+
+                    <button
+                        class="assistant-option"
+                        data-value="commercial"
+                    >
+                        <i class="fa-solid fa-building"></i>
+
+                        <span>
+                            مشروع تجاري
+                        </span>
+                    </button>
+
+
+                    <button
+                        class="assistant-option"
+                        data-value="interior"
+                    >
+                        <i class="fa-solid fa-couch"></i>
+
+                        <span>
+                            تصميم داخلي
+                        </span>
+                    </button>
+
+
+                    <button
+                        class="assistant-option"
+                        data-value="other"
+                    >
+                        <i class="fa-solid fa-ellipsis"></i>
+
+                        <span>
+                            مشروع آخر
+                        </span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Step 2 -->
+
+            <div class="assistant-step" data-step="2">
+
+                <span class="step-number">
+                    02
+                </span>
+
+                <h3>
+                    ما الخدمة التي تحتاجها؟
+                </h3>
+
+                <p>
+                    يمكنك اختيار الخدمة الأقرب لاحتياجك الحالي.
+                </p>
+
+
+                <div class="assistant-options">
+
+                    <button
+                        class="assistant-option"
+                        data-value="architecture"
+                    >
+                        <i class="fa-solid fa-compass-drafting"></i>
+
+                        <span>
+                            التصميم المعماري
+                        </span>
+                    </button>
+
+
+                    <button
+                        class="assistant-option"
+                        data-value="plans"
+                    >
+                        <i class="fa-solid fa-ruler-combined"></i>
+
+                        <span>
+                            المخططات الهندسية
+                        </span>
+                    </button>
+
+
+                    <button
+                        class="assistant-option"
+                        data-value="interior-design"
+                    >
+                        <i class="fa-solid fa-chair"></i>
+
+                        <span>
+                            التصميم الداخلي
+                        </span>
+                    </button>
+
+
+                    <button
+                        class="assistant-option"
+                        data-value="supervision"
+                    >
+                        <i class="fa-solid fa-helmet-safety"></i>
+
+                        <span>
+                            الإشراف الهندسي
+                        </span>
+                    </button>
+
+
+                    <button
+                        class="assistant-option"
+                        data-value="unsure"
+                    >
+                        <i class="fa-solid fa-circle-question"></i>
+
+                        <span>
+                            لست متأكدًا
+                        </span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Step 3 -->
+
+            <div class="assistant-step" data-step="3">
+
+                <span class="step-number">
+                    03
+                </span>
+
+                <h3>
+                    أخبرنا أكثر عن مشروعك
+                </h3>
+
+                <p>
+                    هذه المعلومات تساعدنا على فهم فكرتك بشكل أولي.
+                </p>
+
+
+                <div class="assistant-fields">
+
+                    <div class="assistant-field">
+
+                        <label for="projectArea">
+                            المساحة التقريبية
+                        </label>
+
+                        <div class="input-with-icon">
+
+                            <i class="fa-solid fa-ruler-combined"></i>
+
+                            <input
+                                type="text"
+                                id="projectArea"
+                                placeholder="مثال: 250 م²"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="assistant-field">
+
+                        <label for="projectLocation">
+                            موقع المشروع
+                        </label>
+
+                        <div class="input-with-icon">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <input
+                                type="text"
+                                id="projectLocation"
+                                placeholder="مثال: الخليل"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="assistant-field">
+
+                        <label for="projectDescription">
+                            احكِ لنا عن فكرتك
+                        </label>
+
+                        <textarea
+                            id="projectDescription"
+                            rows="4"
+                            placeholder="اكتب نبذة بسيطة عن المشروع..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="assistant-next"
+                    id="generateRecommendation"
+                >
+                    احصل على التوجيه المبدئي
+
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+            </div>
+
+
+            <!-- Step 4 -->
+
+            <div class="assistant-step" data-step="4">
+
+                
+
+
+                <h3 id="recommendationTitle">
+                    مشروعك يحتاج إلى
+                </h3>
+
+
+                <p
+                    class="recommendation-text"
+                    id="recommendationText"
+                ></p>
+
+
+                <div class="recommendation-box">
+
+                    <span>
+                        الخطوة المقترحة
+                    </span>
+
+                    <strong id="recommendationService">
+                    </strong>
+
+                </div>
+
+
+                <p class="assistant-note">
+                    هذا التوجيه مبدئي لمساعدتك على تحديد احتياجك،
+                    أما التقييم النهائي فيتم بعد مناقشة تفاصيل المشروع
+                    مع المهندسة.
+                </p>
+
+
+                <div class="assistant-result-actions">
+
+
+             <button
+    type="button"
+    id="assistantContact"
+    class="assistant-contact-btn">
+
+    <i class=" fa-brands  fa-whatsapp"></i>
+
+    إرسال تفاصيل المشروع عبر واتساب
+
+</button>
+                    <button
+                        class="assistant-restart"
+                        id="restartAssistant"
+                    >
+                        إعادة المحاولة
+                    </button>
+
+                </div>
+   
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- =====================================================
+         JavaScript
+    ===================================================== -->
+
+    <script src="js/main.js"></script>
+<script src="js/project-assistant.js"></script>
 </body>
 
 </html>
