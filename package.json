@@ -1,0 +1,18 @@
+{
+  "name": "al-worood-engineering-office",
+  "version": "1.0.0",
+  "description": "A modern Arabic website for Al-Worood Engineering Office",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "engineering",
+    "architecture",
+    "arabic"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
