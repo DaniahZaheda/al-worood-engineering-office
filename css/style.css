@@ -518,46 +518,7 @@ img {
 }
 
 
-/* ==================== Hero Info ==================== */
 
-.hero-info {
-
-    position: absolute;
-
-    bottom: 45px;
-    right: 0;
-
-    display: flex;
-
-    gap: 40px;
-}
-
-.hero-info-item {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-.hero-info-item strong {
-
-    color: var(--gold);
-
-    font-family: "Playfair Display", serif;
-
-    font-size: 18px;
-
-    font-weight: 500;
-}
-
-.hero-info-item span {
-
-    color: var(--text-muted);
-
-    font-size: 12px;
-}
 
 
 /* ==================== Scroll Down ==================== */
@@ -1516,7 +1477,7 @@ img {
 
     display: block;
 
-    color: var(--gold);
+    color: var(--navy-dark);
 
     font-weight: 600;
 }

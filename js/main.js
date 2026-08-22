@@ -106,7 +106,7 @@ const projectsData = {
 
         category: "مشروع تجاري واستثماري",
 
-        title: "مركز تجاري واستثماري حديث",
+        title: "مجمع مولات ",
 
         english: "Modern Commercial Mall",
 
