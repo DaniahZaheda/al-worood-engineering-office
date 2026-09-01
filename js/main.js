@@ -183,7 +183,6 @@ document.querySelectorAll(".project-details-btn").forEach(button => {
 
 });
 
-
 // ==================== Close Modal ====================
 
 function closeProjectModal() {
@@ -197,7 +196,7 @@ function closeProjectModal() {
 }
 
 
-// Close button
+// ==================== Close Button ====================
 
 projectModalClose.addEventListener(
     "click",
@@ -205,7 +204,7 @@ projectModalClose.addEventListener(
 );
 
 
-// Close when clicking overlay
+// ==================== Close Overlay ====================
 
 projectModalOverlay.addEventListener(
     "click",
@@ -213,7 +212,7 @@ projectModalOverlay.addEventListener(
 );
 
 
-// Close with Escape
+// ==================== Close with Escape ====================
 
 document.addEventListener("keydown", event => {
 
@@ -225,5 +224,22 @@ document.addEventListener("keydown", event => {
         closeProjectModal();
 
     }
+
+});
+
+
+// =====================================================
+// Close Modal Before Navigating to Contact
+// =====================================================
+
+document.querySelectorAll(
+    '.project-modal a[href="#contact"]'
+).forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        closeProjectModal();
+
+    });
 
 });
